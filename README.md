@@ -21,7 +21,8 @@ The overall structure of the S3 bucket looks like this:
       - original.jpg
       - large.jpg
       - ...
-  - metadata
+  - metadata/
+    - inaturalist-open-data.gz
     - inaturalist-open-data-2020-03-01.gz
     - ...
   - observations.csv.gz
