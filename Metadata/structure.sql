@@ -1,7 +1,6 @@
 CREATE TABLE observations (
     observation_uuid uuid NOT NULL,
     observer_id integer,
-    license character varying(255),
     latitude numeric(15,10),
     longitude numeric(15,10),
     positional_accuracy integer,
