@@ -1,0 +1,3 @@
+# Importing Metadata
+
+After [downloading](../Download) the [metadata](../../Metadata), it can be imported into various tools to better search and retrieve information on one or more photos. Currently there is documentation on how to import into a local [PostgreSQL](PostgreSQL) database, or how to use [AWS RDS](RDS) to import the metadata without needing additional resources or software on your computer. Additional documentation may be added upon request, or by contribution from other users.
