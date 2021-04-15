@@ -23,7 +23,7 @@ The overall structure of the S3 bucket looks like this:
       - ...
   - metadata/
     - inaturalist-open-data-latest.gz
-    - inaturalist-open-data-20200407.gz
+    - inaturalist-open-data-20210407.gz
     - ...
   - observations.csv.gz
   - observers.csv.gz
