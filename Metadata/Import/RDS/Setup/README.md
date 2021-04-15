@@ -45,7 +45,7 @@
 
 **Step 6**: Connect an [IAM Role](../Role) and attach the policy
 
-**Step 7**: Attach the role with the RDS database
+**Step 7**: Associate the role with the RDS database
 
 - Return to your RDS database page by clicking on it from the the `Databases` section of the [Amazon RDS dashboard](https://console.aws.amazon.com/rds/home) in the `Databases` box
 - In the `Connectivity and Security` tab, scroll down to `Manage IAM roles`
@@ -53,4 +53,4 @@
 - You should see [the role you created](../Role) named `iNaturalistImportRole` represented in the `Current IAM roles for this instance` table
 - Wait for the status to become `Active`, refreshing the page if necessary
 - Now reboot the instance. Under the `Actions` menu at the top of the same database page click `Reboot`
-- Wait for the database to become available. Be sure to close any open PostgreSQL connections you have to the database. Until you close your connections and reconnect, the `s3Import` feature may not be enabled, and you may not be able to import from the iNaturalist Open Dataset
+- Wait for the database to become `Available`. Be sure to close any open PostgreSQL connections you have to the database. Until you close your connections and reconnect, the `s3Import` feature may not be enabled, and you may not be able to import from the iNaturalist Open Dataset

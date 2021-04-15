@@ -1,6 +1,6 @@
 CREATE TABLE observations (
     observation_uuid uuid NOT NULL,
-    user_id integer,
+    observer_id integer,
     license character varying(255),
     latitude numeric(15,10),
     longitude numeric(15,10),
@@ -14,7 +14,7 @@ CREATE TABLE photos (
     photo_uuid uuid NOT NULL,
     photo_id integer NOT NULL,
     observation_uuid uuid NOT NULL,
-    user_id integer,
+    observer_id integer,
     extension character varying(5),
     license character varying(255),
     width smallint,
@@ -31,7 +31,8 @@ CREATE TABLE taxa (
     active boolean
 );
 
-CREATE TABLE users (
-    user_id integer NOT NULL,
-    login character varying(255)
+CREATE TABLE observers (
+    observer_id integer NOT NULL,
+    login character varying(255),
+    name character varying(255)
 );

@@ -82,12 +82,22 @@ To make geospatial queries on observations, PostGIS must be installed and the da
 ALTER TABLE observations ADD COLUMN geom public.geometry;
 
 UPDATE observations SET geom = ST_GeomFromText('POINT(' || longitude || ' ' || latitude || ')', 4326);
-
 ```
 <br/>
 
-After that finishes, geospatial queries can be made with the new `observations.geom` column. For example, this query should return 10 observations within a bounding box. From the PostgreSQL console run:
+Index the new `geom` column for faster queuries (this will also be slow):
+```sql
+CREATE INDEX observations_geom ON observations USING GIST (geom);
+```
+<br/>
+
+It's always a good idea to run `ANNALYZE` after importing data or making schema changes:
+```sql
+VACUUM ANALYZE;
+```
+<br/>
+
+Now geospatial queries can be made with the new `observations.geom` column. For example, this query should return 10 observations within a bounding box. From the PostgreSQL console run:
 ```sql
 SELECT COUNT(*) FROM observations WHERE ST_Within(geom, 'POLYGON((-162 18, -153 18, -153 23, -162 23, -162 18))'::geography::geometry);
 ```
-
