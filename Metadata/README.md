@@ -43,8 +43,8 @@ observed_on | The date at which the observation took place
 Column | Description
 -------|------------
 observer_id | A unique identifier associated with each observer also available on https://www.inaturalist.org via URLs constructed like this: https://www.inaturalist.org/users/1
-login | A unique login associated with each user
-name | Personal name of the user, if provided
+login | A unique login associated with each observer
+name | Personal name of the observer, if provided
 
 ### Photos
 Column | Description

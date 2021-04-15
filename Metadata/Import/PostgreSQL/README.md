@@ -29,7 +29,7 @@ Import the CSV files into the created tables (adjust the paths according to the 
 COPY observations FROM 'observations.csv' DELIMITER E'\t' QUOTE E'\b' CSV HEADER;
 COPY photos FROM 'photos.csv' DELIMITER E'\t' QUOTE E'\b' CSV HEADER;
 COPY taxa FROM 'taxa.csv' DELIMITER E'\t' QUOTE E'\b' CSV HEADER;
-COPY users FROM 'users.csv' DELIMITER E'\t' QUOTE E'\b' CSV HEADER;
+COPY observers FROM 'observers.csv' DELIMITER E'\t' QUOTE E'\b' CSV HEADER;
 ```
 <br/>
 
@@ -38,8 +38,8 @@ Create some indices that may help improve the speed of some queries. From the Po
 CREATE INDEX index_photos_photo_uuid ON photos USING btree (photo_uuid);
 CREATE INDEX index_photos_observation_uuid ON photos USING btree (observation_uuid);
 CREATE INDEX index_taxa_taxon_id ON taxa USING btree (taxon_id);
-CREATE INDEX index_users_user_id ON users USING btree (user_id);
-CREATE INDEX index_observations_user_id ON observations USING btree (user_id);
+CREATE INDEX index_observers_observers_id ON observers USING btree (observer_id);
+CREATE INDEX index_observations_observer_id ON observations USING btree (observer_id);
 CREATE INDEX index_observations_taxon_id ON taxa USING btree (taxon_id);
 ```
 <br/>
@@ -50,13 +50,13 @@ At this point the database should be set up, populated with data, and indexed. F
 SELECT
   t.taxon_id,
   t.name taxon_name,
-  'https://www.inaturalist.org/observations/' || o.observation_uuid as observation_url,
-  u.login,
+  'https://www.inaturalist.org/observations/' || obs.observation_uuid as observation_url,
+  o.login,
   'https://inaturalist-open-data.s3.amazonaws.com/photos/' || p.photo_id || '/medium.' || p.extension as photo_url
 FROM taxa t
-JOIN observations o ON (t.taxon_id = o.taxon_id)
-JOIN photos p ON (o.observation_uuid=p.observation_uuid)
-JOIN users u ON (o.user_id = u.user_id)
+JOIN observations obs ON (t.taxon_id = obs.taxon_id)
+JOIN photos p ON (obs.observation_uuid=p.observation_uuid)
+JOIN observers o ON (obs.observer_id = o.observer_id)
 WHERE t.ancestry LIKE '48460/1/%'
 LIMIT 10;
 ```
@@ -77,7 +77,7 @@ CREATE INDEX observations_geom ON observations USING GIST (geom);
 ```
 <br/>
 
-It's always a good idea to run `ANNALYZE` after importing data or making schema changes:
+It's always a good idea to run `ANALYZE` after importing data or making schema changes:
 ```sql
 VACUUM ANALYZE;
 ```
