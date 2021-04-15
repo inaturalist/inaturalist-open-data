@@ -1,7 +1,7 @@
 # Dataset Metadata
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/48566/110021775-2981b780-7cf9-11eb-99bd-2b428c89ae1f.png" width="600px">
+  <img src="https://user-images.githubusercontent.com/48566/114919407-344e6280-9df6-11eb-8138-8dee7d626673.png" width="600px">
 </p>
 
 The iNaturalist Open Dataset S3 bucket contains four separate metadata files representing observations, observers, photos, and taxa (the organisms that are the subject of the observations). These files are updated monthly. These files are stored in two ways: as separate gzipped tab-separated CSV files, and as a single gzipped archive containing all four files. The files are located as follows:
