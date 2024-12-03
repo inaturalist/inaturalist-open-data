@@ -23,7 +23,7 @@ The overall structure of the S3 bucket looks like this:
       - ...
   - metadata/
     - inaturalist-open-data-latest.tar.gz
-    - inaturalist-open-data-20210407.tar.gz
+    - inaturalist-open-data-20241127.tar.gz
     - ...
   - observations.csv.gz
   - observers.csv.gz
@@ -43,7 +43,7 @@ square - exactly 75x75px, cropped to be square
 ```
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/48566/114919407-344e6280-9df6-11eb-8138-8dee7d626673.png" width="600px">
+  <img src="https://github.com/user-attachments/assets/2f16935c-1166-4cc8-82c7-6ce0e33bd892" width="600px">
 </p>
 
 

@@ -6,7 +6,8 @@ CREATE TABLE observations (
     positional_accuracy integer,
     taxon_id integer,
     quality_grade character varying(255),
-    observed_on date
+    observed_on date,
+    anomaly_score double precision
 );
 
 CREATE TABLE photos (
