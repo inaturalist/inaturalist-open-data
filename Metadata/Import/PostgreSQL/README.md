@@ -38,7 +38,7 @@ Create some indices that may help improve the speed of some queries. From the Po
 CREATE INDEX index_photos_photo_uuid ON photos USING btree (photo_uuid);
 CREATE INDEX index_photos_observation_uuid ON photos USING btree (observation_uuid);
 CREATE INDEX index_taxa_taxon_id ON taxa USING btree (taxon_id);
-CREATE INDEX index_observers_observers_id ON observers USING btree (observer_id);
+CREATE INDEX index_observers_observer_id ON observers USING btree (observer_id);
 CREATE INDEX index_observations_observer_id ON observations USING btree (observer_id);
 CREATE INDEX index_observations_taxon_id ON taxa USING btree (taxon_id);
 ```

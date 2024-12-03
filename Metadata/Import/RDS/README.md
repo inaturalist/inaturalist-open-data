@@ -32,7 +32,7 @@ CREATE EXTENSION aws_s3 CASCADE;
 ```
 <br/>
 
-If the RDS database has successfully enabled `s3Import` from with an [IAM Role](Role), the following command should populate the tables created above with the latest iNaturalist Open Dataset snapshot. From the PostgreSQL console run:
+If the RDS database has successfully enabled `s3Import` with an [IAM Role](Role), the following command should populate the tables created above with the latest iNaturalist Open Dataset snapshot. From the PostgreSQL console run:
 ```sql
 SELECT aws_s3.table_import_from_s3('photos', '', '(format csv, header true, delimiter E''\t'', quote E''\b'')',
   aws_commons.create_s3_uri('inaturalist-open-data', 'photos.csv.gz', 'us-east-1')) as s;

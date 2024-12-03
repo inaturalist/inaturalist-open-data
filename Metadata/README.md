@@ -1,7 +1,7 @@
 # Dataset Metadata
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/48566/114919407-344e6280-9df6-11eb-8138-8dee7d626673.png" width="600px">
+  <img src="https://github.com/user-attachments/assets/2f16935c-1166-4cc8-82c7-6ce0e33bd892" width="600px">
 </p>
 
 The iNaturalist Open Dataset S3 bucket contains four separate metadata files representing observations, observers, photos, and taxa (the organisms that are the subject of the observations). These files are updated monthly. These files are stored in two ways: as separate gzipped tab-separated CSV files, and as a single gzipped archive containing all four files. The files are located as follows:
@@ -38,6 +38,7 @@ positional_accuracy | The uncertainty in meters around the latitude and longitud
 taxon_id | The identifier of the associated axon the observation has been identified as
 quality_grade | `Casual` observations are missing certain data components (e.g. latitude) or may have flags associated with them not shown here (e.g. `location appears incorrect`). Observations flagged as not wild are also considered Casual. All other observations are either `Needs ID` or `Research Grade`. Generally, Research Grade observations have more than one agreeing identifications at the species level, or if there are disagreements at least ⅔ of the identifications are in agreement a the species level
 observed_on | The date at which the observation took place
+anomaly_score | A measure of "unusualness" of the observation taxon in the observation location based on the [iNaturalist Geomodel](https://www.inaturalist.org/blog/99727-using-the-geomodel-to-highlight-unusual-observations). Values below 1.0 indicate the taxon is not "expected nearby" the observation location according to the Geomodel, with lower values meaning more unexpected.
 
 ### Observers
 Column | Description
