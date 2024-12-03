@@ -6,7 +6,7 @@ The metadata files are stored in the iNaturalist Open Dataset as follows:
 - inaturalist-open-data
   - metadata/
     - inaturalist-open-data-latest.tar.gz
-    - inaturalist-open-data-20210407.tar.gz
+    - inaturalist-open-data-20241127.tar.gz
     - ...
   - observations.csv.gz
   - observers.csv.gz
