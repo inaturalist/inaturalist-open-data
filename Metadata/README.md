@@ -18,7 +18,7 @@ The iNaturalist Open Dataset S3 bucket contains four separate metadata files rep
   - taxa.csv.gz
 ```
 
-The archive bundles are stored in the `metadata/` directory, with the most recent version being stored at `metadata/inaturalist-open-data.gz` and a limited number of older snapshots included. The separate CSV files are stored at the root of the bucket (in part becuause of a requirement when importing data from S3 [into RDS](Import/RDS)).
+The archive bundles are stored in the `metadata/` directory, with the most recent version being stored at `metadata/inaturalist-open-data-latest.tar.gz` and a limited number of older snapshots included. The separate CSV files are stored at the root of the bucket (in part becuause of a requirement when importing data from S3 [into RDS](Import/RDS)).
 
 The files are all tab-separated CSV files, not using any quotes around text columns, and beware there are single and double quotes in some fields, such as taxon names.
 
