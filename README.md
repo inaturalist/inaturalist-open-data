@@ -29,7 +29,7 @@ The overall structure of the S3 bucket looks like this:
   - observers.csv.gz
   - photos.csv.gz
   - taxa.csv.gz
-  - obsservations_projects.csv.gz
+  - observations_projects.csv.gz
   - projects.csv.gz
 ```
 
